@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Huevos con frijoles y plátano",
+        "description": "Clásico desayuno salvadoreño con frijoles refritos, huevos estrellados y plátano frito.",
+        "category": "desayuno",
+        "ingredients": "2 huevos, 1 taza de frijoles refritos, 1 plátano maduro, aceite, sal al gusto",
+        "recipe_steps": "Fríe el plátano en rodajas hasta dorar, fríe los huevos y calienta los frijoles. Sirve juntos con sal al gusto.",
+        "preparation_time": 15,
+        "nutricional_value": "Alto en proteínas, carbohidratos y potasio.",
+        "created_at": 1760803655,
+        "id": "1"
+    },
+    {
+        "name": "Pupusas de queso",
+        "description": "Tortillas gruesas rellenas de queso, el platillo más emblemático de El Salvador.",
+        "category": "desayuno",
+        "ingredients": "2 tazas de masa de maíz, 1 taza de queso rallado, sal al gusto, aceite",
+        "recipe_steps": "Forma bolas de masa, rellena con queso, aplana y cocina en comal hasta dorar ambos lados.",
+        "preparation_time": 25,
+        "nutricional_value": "Buena fuente de calcio y energía.",
+        "created_at": 1760803655,
+        "id": "2"
+    },
+    {
+        "name": "Tamales de elote",
+        "description": "Tamales dulces elaborados con elote tierno y cocidos al vapor en hojas de maíz.",
+        "category": "desayuno",
+        "ingredients": "6 elotes tiernos, 1 taza de crema, 1/2 taza de azúcar, hojas de maíz",
+        "recipe_steps": "Muele los elotes, mezcla con crema y azúcar, coloca en hojas y cocina al vapor por 40 minutos.",
+        "preparation_time": 45,
+        "nutricional_value": "Rico en carbohidratos y energía natural del maíz.",
+        "created_at": 1760803655,
+        "id": "3"
+    },
+    {
+        "name": "Pollo encebollado",
+        "description": "Plato tradicional de almuerzo con pollo guisado y abundante cebolla.",
+        "category": "almuerzo",
+        "ingredients": "1 libra de pollo, 2 cebollas, 1 tomate, ajo, sal, aceite",
+        "recipe_steps": "Sofríe el ajo y la cebolla, agrega el pollo y el tomate, cocina hasta que el pollo esté tierno.",
+        "preparation_time": 35,
+        "nutricional_value": "Alto en proteínas y antioxidantes.",
+        "created_at": 1760803655,
+        "id": "4"
+    },
+    {
+        "name": "Carne guisada",
+        "description": "Carne de res cocinada lentamente con verduras y salsa de tomate.",
+        "category": "almuerzo",
+        "ingredients": "1 libra de carne de res, 2 tomates, 1 papa, 1 zanahoria, cebolla, ajo, sal",
+        "recipe_steps": "Dora la carne, agrega verduras y tomate, cocina a fuego medio por 40 minutos hasta ablandar.",
+        "preparation_time": 50,
+        "nutricional_value": "Fuente de hierro, proteínas y fibra vegetal.",
+        "created_at": 1760803655,
+        "id": "5"
+    },
+    {
+        "name": "Pescado frito con arroz y ensalada",
+        "description": "Pescado entero frito acompañado con arroz blanco y ensalada fresca.",
+        "category": "almuerzo",
+        "ingredients": "1 pescado mediano, 1 taza de arroz, 1 tomate, lechuga, aceite, sal",
+        "recipe_steps": "Sazona y fríe el pescado, cocina el arroz y prepara la ensalada. Sirve todo junto.",
+        "preparation_time": 30,
+        "nutricional_value": "Rico en omega-3, proteínas y vitaminas.",
+        "created_at": 1760803655,
+        "id": "6"
+    },
+    {
+        "name": "Sopa de gallina india",
+        "description": "Sopa casera con gallina criolla, verduras y arroz, típica de las cenas familiares.",
+        "category": "cena",
+        "ingredients": "1 gallina india, 2 litros de agua, 2 elotes, 1 yuca, 1 zanahoria, arroz, sal",
+        "recipe_steps": "Hierve la gallina con sal, agrega las verduras y el arroz, cocina hasta ablandar todo.",
+        "preparation_time": 60,
+        "nutricional_value": "Alta en proteínas, vitaminas y minerales.",
+        "created_at": 1760803655,
+        "id": "7"
+    },
+    {
+        "name": "Riguas con crema",
+        "description": "Tortas de elote asadas en hoja de plátano y servidas con crema.",
+        "category": "cena",
+        "ingredients": "6 elotes, 1/2 taza de leche, hojas de plátano, sal y crema al gusto",
+        "recipe_steps": "Muele los elotes, mezcla con leche, asa en hojas de plátano hasta dorar y sirve con crema.",
+        "preparation_time": 35,
+        "nutricional_value": "Fuente de energía natural y calcio.",
+        "created_at": 1760803655,
+        "id": "8"
+    },
+    {
+        "name": "Empanadas de plátano con frijol",
+        "description": "Dulce tradicional hecho con plátano maduro y relleno de frijoles refritos.",
+        "category": "cena",
+        "ingredients": "3 plátanos maduros, 1 taza de frijoles refritos, azúcar, aceite",
+        "recipe_steps": "Cuece los plátanos, haz un puré, rellena con frijoles, forma empanadas y fríe hasta dorar.",
+        "preparation_time": 30,
+        "nutricional_value": "Rico en carbohidratos y potasio.",
+        "created_at": 1760803655,
+        "id": "9"
+    }
+]
