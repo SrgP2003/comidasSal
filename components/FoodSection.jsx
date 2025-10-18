@@ -1,21 +1,23 @@
-
 import React, { useEffect, useState } from 'react';
-import { View, Text, ActivityIndicator, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ActivityIndicator, TextInput, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { getAllComidas } from '../apiComidasSal';
 
 export default function FoodSection({ title = 'Sección', category = '' }) {
+    const [allItems, setAllItems] = useState([]); //Guarda todos los items obtenidos de la API
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [query, setQuery] = useState(''); //Para busqueda de comidas segun su nombre
 
     useEffect(() => {
-        let mounted = true;
+        let montarInfo = true;
 
         async function load() {
             try {
                 setLoading(true);
                 const data = await getAllComidas();
-                if (!mounted) return;
+                if (!montarInfo) return;
+                setAllItems(data || [])
                 // Filtrar por categoría 
                 const filtered = (data || []).filter((d) => {
                     const cat = (d.category || d.categoria || '').toString().toLowerCase();
@@ -23,22 +25,39 @@ export default function FoodSection({ title = 'Sección', category = '' }) {
                 });
                 setItems(filtered);
             } catch (err) {
-                if (!mounted) return;
+                if (!montarInfo) return;
                 setError(err.message || String(err));
             } finally {
-                if (mounted) setLoading(false);
+                if (montarInfo) setLoading(false);
             }
         }
 
         load();
         return () => {
-            mounted = false;
+            montarInfo = false;
         };
     }, [category]);
 
+    // recalcula items cuando cambian allItems, category o query
+    useEffect(() => {
+        const catLower = (category || '').toString().toLowerCase();
+        const q = (query || '').toString().toLowerCase().trim();
+
+        const filteredByCategory = (allItems || []).filter((d) => {
+            const cat = (d.category || d.categoria || '').toString().toLowerCase();
+            return cat === catLower;
+        });
+
+        const filtered = q
+            ? filteredByCategory.filter((d) => (d.name || '').toString().toLowerCase().includes(q))
+            : filteredByCategory;
+
+        setItems(filtered);
+    }, [allItems, category, query]);
+
     const renderItem = ({ item }) => (
         <TouchableOpacity style={styles.item}>
-            <Text style={styles.name}>{item.name|| 'Sin nombre'}</Text>
+            <Text style={styles.name}>{item.name || 'Sin nombre'}</Text>
             {item.description ? <Text style={styles.desc}>{item.description}</Text> : null}
             {item.ingredients ? <Text style={styles.meta}>Ingredientes: {item.ingredients}</Text> : null}
             {item.preparation_time != null ? (
@@ -51,6 +70,15 @@ export default function FoodSection({ title = 'Sección', category = '' }) {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
+
+            <TextInput
+                style={styles.search}
+                placeholder="Buscar una comida por nombre..."
+                value={query}
+                onChangeText={setQuery}
+                returnKeyType="search"
+                clearButtonMode="while-editing"
+            />
 
             {loading ? (
                 <ActivityIndicator size="small" />
@@ -83,6 +111,16 @@ const styles = StyleSheet.create({
         marginBottom: 6,
         paddingHorizontal: 12,
         textAlign: 'center',
+    },
+    search: {
+        borderWidth: 1,
+        borderColor: '#ddd',
+        backgroundColor: '#fff',
+        marginHorizontal: 12,
+        paddingHorizontal: 12,
+        paddingVertical: 8,
+        borderRadius: 8,
+        marginBottom: 8,
     },
     item: {
         backgroundColor: '#fff',
